@@ -1,17 +1,22 @@
 # vue版本2.6.11
-1. server目录: node express接口框架
+### server目录: node express接口框架
 使用方法：
 - npm install -g express
 - npm install -g express-generator
 - 初始化：npm i (如果慢请运行：npm config set registry https://registry.npm.taobao.org)
 - 启动：npm run dev
-2. vue-demo: 项目目录
+### vue-demo: 项目目录
 使用方法
 - 初始化：yarn or npm i
 - .env.development文件里的VUE_APP_DEV_URL换成自己本地域名
 - vue.config.js文件里的跨域代理域名换成自己本地域名
 
-3. 用户名：admin 密码：123456
+### 用户名：admin 密码：123456
+
+### 添加eslint 保存时自动修复规则
+- vue add @vue/eslint(选择标准模式Standard && 选择保存时校验Lint on save)
+- 简单配置在下面
+- 如果保存自动修复不生效 请单独添加vue-demo目录到vscode工作区
 
 # 环境配置
 - 测试环境 => .env.test
@@ -71,7 +76,7 @@ module.exports = {
 ```
 
 ## eslint配置
-1. 创建项目时选择安装eslint 或者 vue add @vue/eslint(选择标准模式Standard && 选择保存时校验Lint on save)
+1. vue add @vue/eslint(选择标准模式Standard && 选择保存时校验Lint on save)
 2. vscode 保存时简单修复eslint setting文件中配置
 3. .eslintignore文件：忽略文件（同git忽略文件）
 4. vscode setting文件配置 + 保存时简单修复eslint规则

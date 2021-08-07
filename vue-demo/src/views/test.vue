@@ -5,10 +5,6 @@
             <el-button @click="checkName">vuex测试</el-button>
         </div>
         <div>
-            <el-button @click="initData">GET接口测试</el-button>
-            <el-button @click="initData_2">POST接口测试</el-button>
-        </div>
-        <div>
             <el-button @click="testMoveEvent">事件监听</el-button>
         </div>
     </div>
@@ -32,20 +28,6 @@ export default {
             }
             this.listen_1 = ElemListen(document.body, 'mousemove', () => {
                 console.log(1111);
-            });
-        },
-        // 接口测试
-        initData () {
-            this.$http.testget({
-                data: { id: 1 },
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-            }).then(res => {
-                console.log(res);
-            });
-        },
-        initData_2 () {
-            this.$http.testpost({ data: { id: 1 }, headers: { 'Content-Type': 'text/plain' } }).then(res => {
-                console.log(res);
             });
         }
     },

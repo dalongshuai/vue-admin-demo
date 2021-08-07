@@ -1,4 +1,4 @@
-import { get, post } from './http';
+import { post } from './http';
 
 /*
 get/post第三个参数(可选)：取消请求的唯一key(必须与请求名称一致) 加上此参数时，请求可以手动取消并且重复请求时会默认取消上一个请求
@@ -10,7 +10,5 @@ get/post第三个参数(可选)：取消请求的唯一key(必须与请求名称
 const login = p => post('/login', p, 'login');
 
 export default {
-    testget,
-    testpost,
     login
 };
