@@ -1,0 +1,6 @@
+$color_red: red;
+
+$imgPath: "../../assets/img/";
+@function bg-img($name) {
+  @return url($imgPath + $name);
+}
