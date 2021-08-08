@@ -1,5 +1,9 @@
-$color_red: red;
+/* 主题 */
+$ftc: #fff;
+$head--bg: #333;
+$page--bg: #545c64;
 
+/* 图片路径变量 */
 $imgPath: "../../assets/img/";
 @function bg-img($name) {
   @return url($imgPath + $name);

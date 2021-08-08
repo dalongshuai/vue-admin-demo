@@ -1,6 +1,10 @@
 * {
     box-sizing: border-box;
 }
+html, body {
+    width: 100%;
+    height: 100%;
+}
 html, body, p, ul, ol, form {
     margin: 0;
     padding: 0;
@@ -103,4 +107,7 @@ html, body, p, ul, ol, form {
 /* element-ui */
 .el-message {
     min-width: auto;
+}
+.el-menu {
+    border-right: none;
 }

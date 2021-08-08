@@ -2,22 +2,14 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import routeMap from './routeMap.js';
 import store from '@/store';
-import Home from '@/views/Home';
-import Empty from '@/views/404.vue';
 
 Vue.use(VueRouter);
 
+/*
+设置了语言方案时  属性name必加
+*/
 const routes = [
-    {
-        path: '/',
-        name: 'home',
-        component: Home,
-        meta: {
-            title: '首页'
-        }
-    },
-    ...routeMap,
-    { path: '*', component: Empty }
+    ...routeMap
 ];
 
 const router = new VueRouter({
@@ -31,7 +23,11 @@ const beforeEach = async (toRoute, fromRoute, next) => {
     if(toRoute.meta.title) document.title = toRoute.meta.title;
     // 登录状态
     const token = store.state.token;
-    if(token && toRoute.path === '/login') return false;
+    if(token && toRoute.path === '/login') {
+        next({
+            path: '/404'
+        });
+    };
     if(!token && toRoute.path !== '/login') {
         next({
             path: '/login'

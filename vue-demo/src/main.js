@@ -6,12 +6,18 @@ import $http from '@/request/api.js';
 import { session } from '@/utils';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import zhLocale from 'element-ui/lib/locale/lang/zh-CN';
+import enLocale from 'element-ui/lib/locale/lang/en';
 
 /* 全局css */
 import '@/assets/styles/common.css';
 
 /* 完整引入 */
-Vue.use(ElementUI);
+if(store.state.local === 'en') {
+    Vue.use(ElementUI, { locale: enLocale });
+} else {
+    Vue.use(ElementUI, { locale: zhLocale });
+}
 
 /* 按需引入element ui */
 // import {

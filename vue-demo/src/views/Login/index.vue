@@ -2,8 +2,8 @@
     <div class="login">
         <div class="login-box">
             <div class="login-title">
-                <p>管理系统</p>
-                <p>management system</p>
+                <p>{{lang.title}}</p>
+                <p>{{lang.desc}}</p>
             </div>
             <div class="login-form flex">
                 <div class="img-box flex align-center">
@@ -11,9 +11,9 @@
                 </div>
                 <div class="form flex align-center justify-center">
                     <el-form :model="loginFrom" ref="ruleForm">
-                        <el-input class="mt20" prefix-icon="el-icon-user" type="text" v-model="loginFrom.username" placeholder="请输入用户名"></el-input>
-                        <el-input class="mt20" prefix-icon="el-icon-lock" type="password" v-model="loginFrom.password" placeholder="请输入密码"></el-input>
-                        <el-button class="mt20 w_100" type="primary" :loading="loading" @click="submitForm()">登录</el-button>
+                        <el-input class="mt20" prefix-icon="el-icon-user" type="text" v-model="loginFrom.username" :placeholder="lang.user"></el-input>
+                        <el-input class="mt20" prefix-icon="el-icon-lock" type="password" v-model="loginFrom.password" :placeholder="lang.pwd"></el-input>
+                        <el-button class="mt20 w_100" type="primary" :loading="loading" @click="submitForm()">{{lang.btn}}</el-button>
                     </el-form>
                 </div>
             </div>
@@ -22,6 +22,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
     data () {
         return {
@@ -56,6 +58,11 @@ export default {
                 this.loading = false;
             });
         }
+    },
+    computed: {
+        ...mapGetters({
+            lang: 'language'
+        })
     }
 };
 </script>

@@ -27,3 +27,20 @@ export const session = {
         sessionStorage.clear();
     }
 };
+/* session */
+export const storage = {
+    get: (key) => {
+        var data = localStorage[key];
+        if(!data || data === 'null') {
+            return null;
+        }
+        return JSON.parse(data);
+    },
+    set: (key, value) => {
+        localStorage[key] = JSON.stringify(value);
+    },
+    // 删除
+    remove (key) {
+        localStorage.removeItem(key);
+    }
+};

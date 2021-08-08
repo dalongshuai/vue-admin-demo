@@ -40,7 +40,7 @@
 <style lang="scss" scoped>
 .cus_404 {
     background: #000;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     display: flex;
     font-family: 'Anton', sans-serif;

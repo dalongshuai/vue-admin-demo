@@ -1,5 +1,7 @@
+import router from '@/router';
+
 export const getters = {
-    getUser (state, getters) {
-        return state.count;
+    language (state, getters) {
+        return state.language[state.local][router.app._route.name];
     }
 };
